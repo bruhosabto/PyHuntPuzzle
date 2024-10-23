@@ -4,7 +4,6 @@ from ecdsa import SECP256k1, SigningKey
 import random
 import multiprocessing
 from queue import Queue
-
 import os
 
 class FinderMath:
