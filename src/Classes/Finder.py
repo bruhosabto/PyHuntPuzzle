@@ -4,6 +4,7 @@ from ecdsa import SECP256k1, SigningKey
 import random
 import multiprocessing
 from queue import Queue
+
 import os
 
 class FinderMath:
@@ -109,7 +110,7 @@ class FinderMath:
             with contador.get_lock():
                 contador.value+=1
             if address.startswith(self.__Alvo[:4]):
-                print(f"\33[{self.__Linha}HComeçando com:{self.__Alvo[:4]}\nAddress: {address}\nBase Key: {hex_key}")
+                print(f"\33[{self.__Linha}HComeçando com:{self.__Alvo[:4]}\nAddress: {address}\nBase Key: {self.__private_key_hex_show}")
             if address.startswith(self.__Alvo[:5]):
                 print(f"\33[{self.__Linha+3}HComeçando com:{self.__Alvo[:5]}\nAddress:{address}\nBase Key: {self.__private_key_hex_show}")
             else:
